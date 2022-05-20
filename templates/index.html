@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <hr>
+    <div class="row justify-content-center text-center">
+        <h3>Curitiba</h3>
+    </div>
+    <div class="row justify-content-center">
+        <div class="row justify-content-center">
+            {% if atual > 15 and atual < 35 %}
+            <div class="col-xl-4 col-md-6">
+                <div class="card bg-success text-white mb-4">
+                    <div class="card-body text-center">Sem alerta de temperatura</div>
+                    <div class="card-footer d-block align-items-center justify-content-center">
+                        <span class="small">Temperatura atual: {{ atual|replace('.', ',') }}° C</span>
+                    </div>
+                </div>
+            </div>
+            {% elif atual > 5 and atual < 40%}
+            <div class="col-xl-4 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body text-center">Alerta de temperatura</div>
+                    <div class="card-footer d-block align-items-center justify-content-center text-center">
+                        <span class="small">Temperatura atual: {{ atual|replace('.', ',') }}° C</span>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-xl-4 col-md-6">
+                <div class="card bg-danger text-white mb-4">
+                    <div class="card-body text-center">Alerta de temperatura extrema</div>
+                    <div class="card-footer d-block align-items-center justify-content-center text-center">
+                        <span class="small text-white">Temperatura atual: {{ atual|replace('.', ',') }}° C</span>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Temperatura Mínima
+                </div>
+                <div class="card-body text-center" style="justify-content: center; ">
+                    <div class="mt-2 mb-2" style="align-items: center; font-size: xxx-large;">
+                        <i class="fa-solid fa-arrow-down" style="color: blue;"></i>
+                        <span>{{minmax[0]|replace('.',',')}}° C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-chart-area me-1"></i>
+                    Temperatura Máxima
+                </div>
+                <div class="card-body text-center" style="justify-content: center; ">
+                    <div class="mt-2 mb-2" style="align-items: center; font-size: xxx-large;">
+                        <i class="fa-solid fa-arrow-up" style="color: red;"></i>
+                        <span>{{minmax[1]|replace('.',',')}}° C</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}
