@@ -1,2 +1,4 @@
-*.ps1
+vars.ps1
+vars.sh
 venv/*
+__pycache__
