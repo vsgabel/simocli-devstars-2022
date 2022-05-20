@@ -31,5 +31,14 @@
                 </a>
             </div>
         </div>
+        {% if user %}
+        <div class="sb-sidenav-footer">
+            <div class="small">Logado como:</div>
+            {{ user }}
+            <div class="small text-center">
+                <span><a href="{{ url_for('logout') }}" class="btn btn-secondary btn-small" style="font-size: x-small;">Sair</a></span>
+            </div>
+        </div>
+        {% endif %}
     </nav>
 </div>

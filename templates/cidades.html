@@ -8,7 +8,7 @@
     </div>
     <div class="card-body">
         <table id="datatablesSimple">
-            <thead>
+            <thead class="text-center">
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
@@ -18,7 +18,7 @@
                     <th>Ver dados</th>
                 </tr>
             </thead>
-            <tfoot>
+            <tfoot class="text-center">
                 <tr>
                     <th>Id</th>
                     <th>Nome</th>
@@ -29,110 +29,16 @@
                 </tr>
             </tfoot>
             <tbody class="text-center">
+                {% for cidade in cidades %}
                 <tr>
-                    <td>6322752</td>
-                    <td>Curitiba</td>
-                    <td>PR/Brasil</td>
-                    <td>-25.504</td>
-                    <td>-49.291</td>
-                    <td><a href="{{ url_for('clima', cidade='6322752') }}" class="link" style="width: 100%;">Ver mais</a> </td>
+                    <td>{{ cidade[0] }}</td>
+                    <td>{{ cidade[1] }}</td>
+                    <td>{{ cidade[2] }}</td>
+                    <td>{{ "%.3f"|format(cidade[3]) }}°N</td>
+                    <td>{{ "%.3f"|format(cidade[4]) }}°E</td>
+                    <td><a href="{{ cidade[5] }}" class="link">Ver mais</a></td>
                 </tr>
-                <tr>
-                    <td>3451783</td>
-                    <td>Realeza</td>
-                    <td>PR/Brasil</td>
-                    <td>-25.769</td>
-                    <td>-53.532</td>
-                    <td><a href="{{ url_for('clima', cidade='3451783') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3467400</td>
-                    <td>Capanema</td>
-                    <td>PR/Brasil</td>
-                    <td>-53.820</td>
-                    <td>-25.660</td>
-                    <td><a href="{{ url_for('clima', cidade='3467400') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3454818</td>
-                    <td>Pato Branco</td>
-                    <td>PR/Brasil</td>
-                    <td>-26.229</td>
-                    <td>-52.671</td>
-                    <td><a href="{{ url_for('clima', cidade='3454818') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3470597</td>
-                    <td>Barra Velha</td>
-                    <td>PR/Brasil</td>
-                    <td>-26.632</td>
-                    <td>-48.684</td>
-                    <td><a href="{{ url_for('clima', cidade='3470597') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3455775</td>
-                    <td>Osasco</td>
-                    <td>SP/Brasil</td>
-                    <td>-23.532</td>
-                    <td>-46.7921</td>
-                    <td><a href="{{ url_for('clima', cidade='3455775') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3448439</td>
-                    <td>São Paulo</td>
-                    <td>SP/Brasil</td>
-                    <td>-23.547</td>
-                    <td>-46.636</td>
-                    <td><a href="{{ url_for('clima', cidade='3448439') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3451190</td>
-                    <td>Rio de Janeiro</td>
-                    <td>RJ/Brasil</td>
-                    <td>-22.903</td>
-                    <td>-43.207</td>
-                    <td><a href="{{ url_for('clima', cidade='3451190') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>6322737</td>
-                    <td>Colombo</td>
-                    <td>PR/Brasil</td>
-                    <td>-25.363</td>
-                    <td>-49.185</td>
-                    <td><a href="{{ url_for('clima', cidade='6322737') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3457967</td>
-                    <td>Mangueirinha</td>
-                    <td>PR/Brasil</td>
-                    <td>-25.941</td>
-                    <td>-52.176</td>
-                    <td><a href="{{ url_for('clima', cidade='3457967') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>3585968</td>
-                    <td>San Salvador</td>
-                    <td>El Salvador</td>
-                    <td>13.833</td>
-                    <td>-88.918</td>
-                    <td><a href="{{ url_for('clima', cidade='3585968') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>108410</td>
-                    <td>Riyadh</td>
-                    <td>Arábia Saudita</td>
-                    <td>24.689</td>
-                    <td>46.722</td>
-                    <td><a href="{{ url_for('clima', cidade='108410') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
-                <tr>
-                    <td>2729907</td>
-                    <td>Longyearbyen</td>
-                    <td>Svalbard/Noruega</td>
-                    <td>78.219</td>
-                    <td>15.640</td>
-                    <td><a href="{{ url_for('clima', cidade='2729907') }}" class="link" style="width: 100%;">Ver mais</a> </td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
     </div>
