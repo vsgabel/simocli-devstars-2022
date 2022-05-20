@@ -58,7 +58,7 @@ def cidades():
         ["3451783", "Realeza", "PR/Brasil", -25.769, -53.532, url_for('clima', cidade='3451783')],
         ["3467400", "Capanema", "PR/Brasil", -53.820, -25.660, url_for('clima', cidade='3467400')],
         ["3454818", "Pato Branco", "PR/Brasil", -26.229, -52.671, url_for('clima', cidade='3454818')],
-        ["3470597", "Barra Velha", "PR/Brasil", -26.632, -48.684, url_for('clima', cidade='3470597')],
+        ["3470597", "Barra Velha", "SC/Brasil", -26.632, -48.684, url_for('clima', cidade='3470597')],
         ["3455775", "Osasco", "SP/Brasil", -23.532, -46.792, url_for('clima', cidade='3455775')],
         ["3448439", "São Paulo", "SP/Brasil", -23.547, -46.636, url_for('clima', cidade='3448439')],
         ["3451190", "Rio de Janeiro", "RJ/Brasil", -22.903, -43.207, url_for('clima', cidade='3451190')],
